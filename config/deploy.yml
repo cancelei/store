@@ -24,7 +24,7 @@ ssh:
 proxy: azureuser@20.80.168.96
   ssl: true
   host: 20.80.168.96
-  app_port: "3000"
+  app_port: 3000
 
 # Credentials for your image host.
 registry:
