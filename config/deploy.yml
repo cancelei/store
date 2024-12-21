@@ -23,7 +23,8 @@ ssh:
 # Note: If using Cloudflare, set encryption mode in SSL/TLS setting to "Full" to enable CF-to-app encryption.
 proxy:
   ssl: true
-  host: 20.80.168.96:3000
+  host: 20.80.168.96
+  port: 3000
 
 # Credentials for your image host.
 registry:
