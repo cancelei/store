@@ -22,7 +22,6 @@ ssh:
 #
 # Note: If using Cloudflare, set encryption mode in SSL/TLS setting to "Full" to enable CF-to-app encryption.
 proxy: azureuser@20.80.168.96
-  ssl: true
   host: 20.80.168.96
   app_port: 3000
 
