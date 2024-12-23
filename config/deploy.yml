@@ -7,22 +7,19 @@ image: cancelei/store
 # Deploy to these servers.
 servers:
   web:
-    - 20.80.168.96
+    - 20.112.66.20
 
 ssh:
   user: azureuser
-  keys: ['~/.ssh/store-vm_key.pem']
   port: 22
-  #   hosts:
-  #     - 192.168.0.1
-  #   cmd: bin/jobs
+  keys: ["~/.ssh/store-vm_key.pem"]
 
 # Enable SSL auto certification via Let's Encrypt and allow for multiple apps on a single web server.
 # Remove this section when using multiple web servers and ensure you terminate SSL at your load balancer.
 #
 # Note: If using Cloudflare, set encryption mode in SSL/TLS setting to "Full" to enable CF-to-app encryption.
 proxy:
-  host: 20.80.168.96
+  host: 20.112.66.20 
   app_port: 3000
 
 sshkit:
