@@ -7,7 +7,7 @@ image: cancelei/store
 # Deploy to these servers.
 servers:
   web:
-    - 20.112.66.20
+    - 20.64.178.147
 
 ssh:
   user: azureuser
@@ -19,12 +19,8 @@ ssh:
 #
 # Note: If using Cloudflare, set encryption mode in SSL/TLS setting to "Full" to enable CF-to-app encryption.
 proxy:
-  host: 20.112.66.20 
-  app_port: 3000
-  healthcheck:
-    path: /up
-    interval: 10
-    timeout: 5
+  ssl: true
+  host: store.epochaid.com
 
 # sshkit:
 #  max_concurrent_starts: 100
@@ -42,7 +38,7 @@ registry:
 # Inject ENV variables into containers (secrets come from .kamal/secrets).
 env:
   secret:
-    - SECRET_KEY_BASE
+    - secret_key_base
     - RAILS_MASTER_KEY
     - KAMAL_REGISTRY_PASSWORD
   clear:
@@ -75,7 +71,8 @@ aliases:
 # Use a persistent storage volume for sqlite database files and local Active Storage files.
 # Recommended to change this to a mounted volume path that is backed up off server.
 volumes:
-  - "store_storage:/rails/storage"
+  - "/db:/rails/sqlite"
+  - "/storage:/rails/storage"
 
 
 # Bridge fingerprinted assets, like JS and CSS, between versions to avoid
