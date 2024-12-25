@@ -6,8 +6,11 @@ image: cancelei/store
 
 # Deploy to these servers.
 servers:
-  web:
+  store.epochaid.com:
     - 20.64.178.147
+    user: azureuser
+    roles:
+      - app
 
 ssh:
   user: azureuser
